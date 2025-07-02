@@ -1,5 +1,6 @@
 package kuke.board.article.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Entity
 @Table(name = "article")
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
