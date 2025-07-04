@@ -35,7 +35,7 @@ public class CommentService {
     }
 
     private Comment findParent(CommentCreateRequest request) {
-        Long parentCommentId = request.getPerantComment();
+        Long parentCommentId = request.getParentCommentId();
         if (parentCommentId == null) {
             return null;
         }
@@ -65,7 +65,7 @@ public class CommentService {
     }
 
     private boolean hasChildren(Comment comment) {
-        return commentRepository.countBy(comment.getArticleId(), comment.getParentCommentId(), 2L) == 2;
+        return commentRepository.countBy(comment.getArticleId(), comment.getCommentId(), 2L) == 2;
     }
 
     private void delete(Comment comment) {

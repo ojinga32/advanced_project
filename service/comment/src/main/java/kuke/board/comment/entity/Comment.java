@@ -12,11 +12,10 @@ import java.time.LocalDateTime;
 
 @Table(name = "comment")
 @Getter
-@ToString
 @Entity
+@ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Comment {
-
     @Id
     private Long commentId;
     private String content;
@@ -45,6 +44,4 @@ public class Comment {
     public void delete() {
         deleted = true;
     }
-
-
 }
