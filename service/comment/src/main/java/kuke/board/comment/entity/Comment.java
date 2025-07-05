@@ -17,13 +17,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Comment {
     @Id
-    private Long commentId;
-    private String content;
+    private Long commentId; //
+    private String content; //
     private Long parentCommentId;
-    private Long articleId;
-    private Long writerId;
+    private Long articleId; //
+    private Long writerId; //
     private Boolean deleted;
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt; //
 
     public static Comment create(Long commentId, String content, Long parentCommentId, Long articleId, Long writerId) {
         Comment comment = new Comment();
