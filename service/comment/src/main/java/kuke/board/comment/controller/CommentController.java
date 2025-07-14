@@ -31,14 +31,7 @@ public class CommentController {
         commentService.delete(commentId);
     }
 
-    @GetMapping("/v1/comments")
-    public CommentPageResponse readAll(
-            @RequestParam("articleId") Long articleId,
-            @RequestParam("page") Long page,
-            @RequestParam("pageSize") Long pageSize
-    ) {
-        return commentService.readAll(articleId, page, pageSize);
-    }
+
 
     @GetMapping("/v1/comments/infinite-scroll")
     public List<CommentResponse> readAll(
