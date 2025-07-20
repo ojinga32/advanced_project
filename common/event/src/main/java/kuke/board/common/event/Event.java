@@ -2,8 +2,10 @@ package kuke.board.common.event;
 
 import kuke.board.common.dataserialier.snowflake.DataSerializer;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class Event<T extends EventPayload> {
     private Long eventId;
     private EventType type;
@@ -22,14 +24,14 @@ public class Event<T extends EventPayload> {
     }
 
     public static Event<EventPayload> fromJson(String json) {
-        EventRaw eventRaw = DataSerializer.deserialize(json, EventRaw.class);
+        EventRaw eventRaw = DataSerializer.deserialize(json, EventRaw.class); // JSON -> 객체
         if (eventRaw == null) {
             return null;
         }
         Event<EventPayload> event = new Event<>();
         event.eventId = eventRaw.getEventId();
         event.type = EventType.from(eventRaw.getType());
-        event.payload = DataSerializer.deserialize(eventRaw.getPayload(), event.type.getPayloadClass());
+        event.payload = DataSerializer.deserialize(eventRaw.getPayload(), event.type.getPayloadClass()); // 객체 → 객체
         return event;
     }
 
