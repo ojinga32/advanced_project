@@ -23,6 +23,7 @@ public class HotArticleService {
     private final HotArticleScoreUpdater hotArticleScoreUpdater;
     private final HotArticleListRepository hotArticleListRepository;
 
+    // 인기글 서비스는 consumer이기 때문에 이벤트를 kafka에서 전달 받음
     public void handleEvent(Event<EventPayload> event) {
         EventHandler<EventPayload> eventHandler = findEventHandler(event);
         if (eventHandler == null) {

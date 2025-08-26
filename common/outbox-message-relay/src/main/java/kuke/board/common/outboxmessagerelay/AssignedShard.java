@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.LongStream;
 
 @Getter
-public class AssignedShard {
+public class   AssignedShard {
     private List<Long> shards;
 
     public static AssignedShard of(String appId, List<String> appIds, long shardCount) {

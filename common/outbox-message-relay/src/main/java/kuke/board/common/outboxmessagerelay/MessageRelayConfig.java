@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 @EnableAsync
 @Configuration
 @ComponentScan("kuke.board.common.outboxmessagerelay")
-@EnableScheduling
+@EnableScheduling // 주기적으로 스케쥴링하는 아노테이션 
 public class MessageRelayConfig {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -35,6 +35,7 @@ public class MessageRelayConfig {
         return new KafkaTemplate<>(new DefaultKafkaProducerFactory<>(configProps));
     }
 
+    // transcation이 끝날 때 마다 보내주는 스레드풀
     @Bean
     public Executor messageRelayPublishEventExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -45,6 +46,7 @@ public class MessageRelayConfig {
         return executor;
     }
 
+    // 미처 전송되지 못한 것들을 pulling해서 보내는 코드
     @Bean
     public Executor messageRelayPublishPendingEventExecutor() {
         return Executors.newSingleThreadScheduledExecutor();
