@@ -5,7 +5,6 @@ import kuke.board.comment.service.response.CommentResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.client.RestClient;
 
