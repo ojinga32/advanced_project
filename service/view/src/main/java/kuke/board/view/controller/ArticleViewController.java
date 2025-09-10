@@ -21,7 +21,7 @@ public class ArticleViewController {
     }
 
     @GetMapping("/v1/article-views/articles/{articleId}/count")
-    public Long coung(@PathVariable("articleId") Long articleId) {
+    public Long count(@PathVariable("articleId") Long articleId) {
         return articleViewService.count(articleId);
     }
 
