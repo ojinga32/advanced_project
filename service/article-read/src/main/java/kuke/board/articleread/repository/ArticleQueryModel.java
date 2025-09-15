@@ -3,10 +3,12 @@ package kuke.board.articleread.repository;
 import kuke.board.articleread.client.ArticleClient;
 import kuke.board.common.event.payload.*;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
 @Getter
+@ToString
 public class ArticleQueryModel {
     private Long articleId;
     private String title;

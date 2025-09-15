@@ -10,7 +10,7 @@ public class ArticleReadApiTest {
     @Test
     void readTest() {
         ArticleReadResponse response = restClient.get()
-                .uri("/v1/articles/{articleId}", 224090791774244864L)
+                    .uri("/v1/articles/{articleId}", 225518885178556416L)
                 .retrieve()
                 .body(ArticleReadResponse.class);
 
