@@ -55,15 +55,14 @@ public class ArticleLikeService {
         outboxEventPublisher.publish(
                 EventType.ARTICLE_LIKED,
                 ArticleLikedEventPayload.builder()
-                        .articleLikedId(articleLike.getArticleLikeId())
+                        .articleLikeId(articleLike.getArticleLikeId())
                         .articleId(articleLike.getArticleId())
                         .userId(articleLike.getUserId())
                         .createdAt(articleLike.getCreatedAt())
-                        .articleLikeCount(articleLike.getArticleId())
+                        .articleLikeCount(count(articleLike.getArticleId()))
                         .build(),
                 articleLike.getArticleId()
         );
-
     }
 
     @Transactional

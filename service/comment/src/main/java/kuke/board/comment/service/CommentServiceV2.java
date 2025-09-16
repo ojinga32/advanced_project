@@ -64,7 +64,7 @@ public class CommentServiceV2 {
                         .writerId(comment.getWriterId())
                         .deleted(comment.getDeleted())
                         .createdAt(comment.getCreatedAt())
-                        .articleCommentCount(comment.getArticleId())
+                        .articleCommentCount(count(comment.getArticleId()))
                         .build(),
                 comment.getArticleId()
         );
