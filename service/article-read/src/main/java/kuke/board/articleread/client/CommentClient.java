@@ -14,7 +14,7 @@ import java.util.Optional;
 @Component
 public class CommentClient {
     private RestClient restClient;
-    @Value("{enendpoints.kuke-board-comment-service.url}")
+    @Value("${endpoints.kuke-board-comment-service.url}")
     private String commentServiceUrl;
 
     @PostConstruct

@@ -12,7 +12,7 @@ import org.springframework.web.client.RestClient;
 @Component
 public class LikeClient {
     private RestClient restClient;
-    @Value("{enendpoints.kuke-board-like-service.url}")
+    @Value("${endpoints.kuke-board-like-service.url}")
     private String likeServiceUrl;
 
     @PostConstruct
