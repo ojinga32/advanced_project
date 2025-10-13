@@ -13,6 +13,8 @@ public class DataInitializer {
     RestClient likeServiceClient = RestClient.create("http://localhost:9002");
     RestClient viewServiceClient = RestClient.create("http://localhost:9003");
 
+    // node js express js 분리하기
+
     @Test
     void initialize() {
         for(int i=0; i<30; i++) {
