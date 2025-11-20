@@ -1,4 +1,4 @@
-📘 대규모 트래픽 대응 게시판 시스템
+#📘 대규모 트래픽 대응 게시판 시스템
 
 Sharding · Redis · Kafka · Outbox · 무한 Depth 댓글 구조 · Snowflake ID
 
