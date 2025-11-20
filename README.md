@@ -90,3 +90,19 @@ Sharding · Redis · Kafka · Outbox · 무한 Depth 댓글 구조 · Snowflake 
 - 3천만 건 대용량 성능 검증  
 
 🛠 실행 방법
+git clone https://github.com/your-repo/project.git
+
+cd project
+docker compose up -d --build
+
+
+환경 변수는 `.env`에서 관리합니다.
+
+📌 **한 줄 요약**
+> “대규모 트래픽 환경을 가정해  
+> 샤딩, 캐싱, 비동기 메시징, 무한 Depth 구조 등  
+> 실제 대형 서비스 아키텍처를 직접 설계하여 구현한 프로젝트입니다.”
+```
+
+##노션주소
+https://www.notion.so/MSA-25bcdb9aab7080159de3d0c1013eaeab
